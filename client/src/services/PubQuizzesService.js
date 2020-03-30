@@ -1,24 +1,22 @@
-const baseURL = 'http://localhost:3000/api/pubQuizzes'
+// const baseURL = 'http://localhost:3000/api/pubQuizzes'
+// use the above if wishing to run locally
+
+const baseURL = "api/pubQuizzes";
 
 export default {
   getQuizzes() {
-    return fetch(baseURL)
-      .then(res => res.json())
+    return fetch(baseURL).then(res => res.json());
   },
 
   getQuizzesByDay(day) {
-    return fetch(`${baseURL}/day/${day}`)
-      .then(res => res.json())
+    return fetch(`${baseURL}/day/${day}`).then(res => res.json());
   },
 
-  postPubQuiz(payload){
+  postPubQuiz(payload) {
     return fetch(baseURL, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(payload),
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then(res => res.json())
+      headers: { "Content-Type": "application/json" }
+    }).then(res => res.json());
   }
-
-
-}
+};
